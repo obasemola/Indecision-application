@@ -2,7 +2,8 @@
 
 var app = {
   title: "Let's get this started",
-  subtitle: 'This is how we start the indecision app'
+  subtitle: 'This is how we start the indecision app',
+  options: ['one', 'two']
 };
 
 var App = function App() {
@@ -14,10 +15,20 @@ var App = function App() {
       null,
       app.title
     ),
-    React.createElement(
+    app.subtitle && React.createElement(
       'p',
       null,
       app.subtitle
+    ),
+    app.options.length > 0 ? React.createElement(
+      'p',
+      null,
+      '\'Here are your options\' ',
+      app.options[0]
+    ) : React.createElement(
+      'p',
+      null,
+      '\'No options\''
     )
   );
 };
