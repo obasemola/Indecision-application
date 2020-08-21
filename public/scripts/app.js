@@ -1,41 +1,27 @@
 'use strict';
 
-var template = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
+var app = {
+  title: "Let's get this started",
+  subtitle: 'This is how we start the indecision app'
+};
+
+var App = function App() {
+  return React.createElement(
+    'div',
     null,
-    'Does this change'
-  ),
-  React.createElement(
-    'p',
-    null,
-    'This is some info'
-  )
-);
+    React.createElement(
+      'h1',
+      null,
+      app.title
+    ),
+    React.createElement(
+      'p',
+      null,
+      app.subtitle
+    )
+  );
+};
+
 var appRoot = document.querySelector('#app');
 
-var templateTwo = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    'Ayodele Obasemola'
-  ),
-  React.createElement(
-    'p',
-    null,
-    'Age: 30'
-  ),
-  React.createElement(
-    'p',
-    null,
-    'Location: Kristiansand'
-  )
-);
-
-ReactDOM.render(templateTwo, appRoot);
-
-console.log('app is running');
+ReactDOM.render(React.createElement(App, null), appRoot);

@@ -1,19 +1,17 @@
-var template = (
-<div>
-  <h1>Does this change</h1>
-  <p>This is some info</p>
-</div>
-);
-var appRoot = document.querySelector('#app');
+const app = {
+  title: "Let's get this started",
+  subtitle: 'This is how we start the indecision app'
+}
 
-const templateTwo = (
-  <div>
-    <h1>Ayodele Obasemola</h1>
-    <p>Age: 30</p>
-    <p>Location: Kristiansand</p>
-  </div>
-)
+const App = () => {
+  return (
+    <div>
+      <h1>{app.title}</h1>
+      <p>{app.subtitle}</p>
+    </div>
+  );
+}
 
-ReactDOM.render(templateTwo,appRoot);
+const appRoot = document.querySelector('#app');
 
-console.log('app is running')
+ReactDOM.render(<App/>, appRoot);
